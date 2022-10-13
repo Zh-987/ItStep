@@ -14,7 +14,14 @@ namespace WebApplication1.Models
         [Display(Name = "Password")]
         public string Password { get; set;}
 
-        //public string ConfirmPassword { get; set; }
+        [Required(ErrorMessage = "Fill the form")]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Required(ErrorMessage = "Fill the form")]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
         [Required(ErrorMessage = "Fill Gender")]
         [Display(Name = "Gender")]
         public string Gender { get; set; }

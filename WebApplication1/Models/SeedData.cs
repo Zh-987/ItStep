@@ -20,6 +20,8 @@ namespace WebApplication1.Models
                     {
                         Login = "user1@user.com",
                         Password = "qwerty123",
+                        FirstName = "John",
+                        LastName = "Smith",
                         Gender = "Male",
                         YearOfBirth = DateTime.Now
                     },
@@ -27,6 +29,8 @@ namespace WebApplication1.Models
                      {
                          Login = "user2@user.com",
                          Password = "qwerty123",
+                         FirstName = "Jack",
+                         LastName = "Sparrow", 
                          Gender = "Female",
                          YearOfBirth = DateTime.Now
                      },
@@ -34,6 +38,8 @@ namespace WebApplication1.Models
                       {
                           Login = "user3@user.com",
                           Password = "qwerty123",
+                          FirstName = "Peter",
+                          LastName = "Parker",
                           Gender = "Male",
                           YearOfBirth = DateTime.Now
                       },
@@ -41,6 +47,8 @@ namespace WebApplication1.Models
                        {
                            Login = "user4@user.com",
                            Password = "qwerty123",
+                           FirstName = "Mario",
+                           LastName = "Mario",
                            Gender = "Female",
                            YearOfBirth = DateTime.Now
                        },
@@ -48,6 +56,8 @@ namespace WebApplication1.Models
                         {
                             Login = "user5@user.com",
                             Password = "qwerty123",
+                            FirstName = "Luigy",
+                            LastName = "Mario",
                             Gender = "Male",
                             YearOfBirth = DateTime.Now
                         }
