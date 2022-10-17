@@ -10,6 +10,14 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<form asp-controller="Home" asp-action="TableOfInformations" method="get">
+    <p>Search by First Name: 
+        <input type="text" name="searched" /> 
+        <input type="submit" value="Filter!!!"/>
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>
@@ -56,7 +64,7 @@
                 @Html.DisplayFor(modelItem => item.YearOfBirth)
             </td>
             <td>
-                    <a asp-action="EditPersonalInformatios" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="EditPersonalInformatios" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="DetailsOfPerseon" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="DeletePerson" asp-route-id="@item.Id">Delete</a>
             </td>

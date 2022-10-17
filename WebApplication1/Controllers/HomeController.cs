@@ -22,6 +22,8 @@ namespace WebApplication1.Controllers
         public IActionResult Index(Guid Id)
         {
           // var personal = await _dbContext.Personal.FirstOrDefaultAsync(m =>m.Id == Id);
+          //
+          // LINQ
 
             return View();
         }
@@ -59,9 +61,17 @@ namespace WebApplication1.Controllers
         }
 
         //Table
-        public async Task<IActionResult> TableOfInformations()
+        public async Task<IActionResult> TableOfInformations(string searched)
         {
-            return View(await _dbContext.Personal.ToListAsync());
+
+            var searchPerson = from m in _dbContext.Personal select m; //LINQ 
+
+            if (!String.IsNullOrEmpty(searched))
+            {
+                searchPerson = searchPerson.Where(s => s.FirstName.Contains(searched));
+            }
+           
+            return View(await searchPerson.ToListAsync());
         }
 
 
