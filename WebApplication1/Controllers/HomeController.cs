@@ -75,44 +75,9 @@ namespace WebApplication1.Controllers
         }
 
 
-
-
-       /*
-        * 
-        * 
-        * 
-        * 
-        * MY FRIEND SPONGE BOB
-        * 
-        * ТАБЛИЦЫ SpongeBobFriends columns ID, FirstName, LastName, Job, JobPlace, SkinCollor, HomeId - этот атрибут связано с Home таблицей
-        * 
-        * 
-        * Home columns ID, HomeType, IsNeighbour
-        * 
-        * 
-        * SEED DATA 
-        * 
-        * 
-        * Insert table add Search tool. Искать по FIRST NAME 
-        * 
-        * 
-        * 
-        * Использовать цвета Sponge Bob
-        * 
-        * DEADLINE 20:50 EXTRA TIME + 10 min 
-        * 
-        * 
-        * 
-        * 
-        * 
-        * 
-        * 
-        */ 
-
-
-
-
         //Edit or Update
+
+
         [HttpPost, ActionName("EditPersonalInformatios")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditPostPersonalInformatios(Guid? Id)
