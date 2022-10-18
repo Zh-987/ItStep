@@ -21,11 +21,13 @@ namespace WebApplication1.Controllers
 
         public IActionResult Index(Guid Id)
         {
-          // var personal = await _dbContext.Personal.FirstOrDefaultAsync(m =>m.Id == Id);
-          //
-          // LINQ
+            // var personal = await _dbContext.Personal.FirstOrDefaultAsync(m =>m.Id == Id);
+            //
+            // LINQ
 
-            return View();
+            List<PersonalInformations> person = (from m in _dbContext.Personal select m).ToList();
+
+            return View(person);
         }
 
         public IActionResult Privacy()
@@ -35,11 +37,16 @@ namespace WebApplication1.Controllers
 
 
         //CRUD - create read update delete
+        [HttpGet]
         public async Task<IActionResult> CreatePersonalInformation()
         {
-            return View();
+            List<PersonalInformations> person = (from m in _dbContext.Personal select m).ToList();
+
+            return View(person);
         }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreatePersonalInformation([Bind("Login,Password,FirstName,LastName,Gender,YearOfBirth")] PersonalInformations information)
         {
             try
@@ -232,5 +239,14 @@ namespace WebApplication1.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        // Partial View
+
+        public async Task<IActionResult> AdditionalInfo()
+        {
+            return PartialView("AdditionalInfo");
+        }
+
+
     }
 }

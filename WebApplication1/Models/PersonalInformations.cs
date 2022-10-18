@@ -6,17 +6,20 @@ namespace WebApplication1.Models
     {
         public Guid Id { get; set; } //Id первый первичный ключ 
 
-        [Required(ErrorMessage ="Fill login")]
+
+        [Required(ErrorMessage = "Fill login")]
         [Display(Name = "User login")]
         public string Login { get; set; }
 
-        [Required(ErrorMessage = "Invalid password")]
-        [Display(Name = "Password")]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,15}$")]
+        [Required]
+        [StringLength(30)]
         public string Password { get; set;}
 
-        [Required(ErrorMessage = "Fill the form")]
-        [Display(Name = "First Name")]
+        [StringLength(60)]
+        [Required]
         public string FirstName { get; set; }
+
 
         [Required(ErrorMessage = "Fill the form")]
         [Display(Name = "Last Name")]
@@ -26,8 +29,8 @@ namespace WebApplication1.Models
         [Display(Name = "Gender")]
         public string Gender { get; set; }
 
-        [Required(ErrorMessage = "Fill Year Of Birth")]
         [Display(Name = "Year Of Birth")]
+        [DataType(DataType.Date)]
         public DateTime YearOfBirth { get; set; } 
 
     }
