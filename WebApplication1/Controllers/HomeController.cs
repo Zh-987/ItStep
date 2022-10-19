@@ -77,44 +77,44 @@ namespace WebApplication1.Controllers
             {
                 searchPerson = searchPerson.Where(s => s.FirstName.Contains(searched));
             }
-           
+
             return View(await searchPerson.ToListAsync());
         }
 
 
 
 
-       /*
-        * 
-        * 
-        * 
-        * 
-        * MY FRIEND SPONGE BOB
-        * 
-        * ТАБЛИЦЫ SpongeBobFriends columns ID, FirstName, LastName, Job, JobPlace, SkinCollor, HomeId - этот атрибут связано с Home таблицей
-        * 
-        * 
-        * Home columns ID, HomeType, IsNeighbour
-        * 
-        * 
-        * SEED DATA 
-        * 
-        * 
-        * Insert table add Search tool. Искать по FIRST NAME 
-        * 
-        * 
-        * 
-        * Использовать цвета Sponge Bob
-        * 
-        * DEADLINE 20:50 EXTRA TIME + 10 min 
-        * 
-        * 
-        * 
-        * 
-        * 
-        * 
-        * 
-        */ 
+        /*
+         * 
+         * 
+         * 
+         * 
+         * MY FRIEND SPONGE BOB
+         * 
+         * ТАБЛИЦЫ SpongeBobFriends columns ID, FirstName, LastName, Job, JobPlace, SkinCollor, HomeId - этот атрибут связано с Home таблицей
+         * 
+         * 
+         * Home columns ID, HomeType, IsNeighbour
+         * 
+         * 
+         * SEED DATA 
+         * 
+         * 
+         * Insert table add Search tool. Искать по FIRST NAME 
+         * 
+         * 
+         * 
+         * Использовать цвета Sponge Bob
+         * 
+         * DEADLINE 20:50 EXTRA TIME + 10 min 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         */
 
 
 
@@ -185,6 +185,7 @@ namespace WebApplication1.Controllers
             return View(person);
         }
 
+     
 
         //Delete 
         public async Task<IActionResult> DeletePerson(Guid id, bool? Savechangeserror = false)
